@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Full list of electrical services from Evansville Electrician Guys — installations, lighting, repairs, and appliance hook-ups in Evansville, IN. Call 812-324-8182." />
+  <title>Our Services | Evansville Electrician Guys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #f5a623; --yellow-dark: #d4861a; --navy: #1a2340; --navy-light: #233058;
+      --gray: #f5f7fa; --text: #1c1c1e; --muted: #6b7280; --white: #ffffff;
+      --radius: 8px; --shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+
+    .topbar { background: var(--navy); color: var(--white); text-align: center; padding: 10px 20px; font-size: 0.875rem; }
+    .topbar a { color: var(--yellow); text-decoration: none; font-weight: 600; }
+
+    header { background: var(--white); box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .header-inner { max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon { width: 44px; height: 44px; background: var(--yellow); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon svg { width: 26px; height: 26px; }
+    .logo-text strong { display: block; font-size: 1.05rem; font-weight: 800; color: var(--navy); }
+    .logo-text span { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+    nav { display: flex; align-items: center; gap: 24px; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.9rem; transition: color .2s; }
+    nav a:hover, nav a.active { color: var(--yellow-dark); }
+    .btn-call { background: var(--yellow); color: var(--navy); padding: 10px 22px; border-radius: var(--radius); font-weight: 700; font-size: 0.9rem; text-decoration: none; white-space: nowrap; }
+    .btn-call:hover { background: var(--yellow-dark); }
+    @media (max-width: 768px) { nav { display: none; } }
+
+    .page-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(26,35,64,0.88) 0%, rgba(35,48,88,0.82) 100%),
+                  url('images/panel-testing.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 12px; }
+    .page-hero p { color: rgba(255,255,255,0.75); font-size: 1rem; max-width: 560px; margin: 0 auto; }
+    .breadcrumb { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 14px; }
+    .breadcrumb a { color: var(--yellow); text-decoration: none; }
+
+    .content { max-width: 1100px; margin: 0 auto; padding: 64px 24px; }
+    .intro-text { max-width: 760px; margin-bottom: 56px; }
+    .intro-text p { color: var(--muted); line-height: 1.8; font-size: 1rem; }
+
+    .section-label { font-size: 0.78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--yellow-dark); margin-bottom: 8px; }
+
+    /* SERVICE BLOCKS */
+    .service-block { margin-bottom: 64px; }
+    .service-block-inner { display: grid; grid-template-columns: 380px 1fr; gap: 40px; align-items: start; }
+    .service-block-inner.reverse { grid-template-columns: 1fr 380px; }
+    @media (max-width: 800px) {
+      .service-block-inner, .service-block-inner.reverse { grid-template-columns: 1fr; }
+      .service-block-inner.reverse .svc-img { order: -1; }
+    }
+    .svc-img { border-radius: 12px; overflow: hidden; }
+    .svc-img img { width: 100%; height: 280px; object-fit: cover; display: block; border-radius: 12px; }
+    .svc-content {}
+    .svc-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 2px solid var(--yellow); }
+    .svc-icon { width: 48px; height: 48px; background: rgba(245,166,35,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .svc-icon svg { width: 26px; height: 26px; color: var(--yellow-dark); }
+    .svc-header h2 { font-size: 1.4rem; font-weight: 800; color: var(--navy); }
+    .svc-content > p { color: var(--muted); line-height: 1.75; margin-bottom: 20px; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { background: var(--gray); border: 1px solid #e5e7eb; border-radius: 999px; padding: 5px 14px; font-size: 0.84rem; color: var(--navy); font-weight: 500; transition: background .2s, border-color .2s; }
+    .tag:hover { background: rgba(245,166,35,0.12); border-color: var(--yellow); }
+
+    /* DIVIDER */
+    .svc-divider { border: none; border-top: 1px solid #e5e7eb; margin: 0 0 64px; }
+
+    .cta-bar { background: var(--navy); border-radius: 14px; padding: 40px 36px; text-align: center; color: var(--white); margin-top: 16px; }
+    .cta-bar h2 { font-size: 1.7rem; font-weight: 800; margin-bottom: 10px; }
+    .cta-bar p { color: rgba(255,255,255,0.70); margin-bottom: 28px; }
+    .cta-bar a { background: var(--yellow); color: var(--navy); padding: 14px 32px; border-radius: var(--radius); font-weight: 700; text-decoration: none; font-size: 1rem; display: inline-block; margin: 4px; }
+    .cta-bar a:hover { background: var(--yellow-dark); }
+    .cta-bar a.outline { background: transparent; border: 2px solid rgba(255,255,255,0.4); color: #fff; }
+
+    .partners-section { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    footer { background: #0f1626; color: rgba(255,255,255,0.6); text-align: center; padding: 32px 24px; font-size: 0.85rem; }
+    footer a { color: var(--yellow); text-decoration: none; }
+    footer strong { color: var(--white); }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  ⚡ 20+ Years Serving Evansville — 24/7 Emergency Service — <a href="tel:+18123248182">812-324-8182</a>
+</div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-text">
+        <strong>Evansville Electrician Guys</strong>
+        <span>Licensed &amp; Insured · Evansville, IN</span>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html" class="active">Our Services</a>
+      <a href="index.html#contact">Contact Us</a>
+    </nav>
+    <a href="tel:+18123248182" class="btn-call">📞 812-324-8182</a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Our Services</div>
+  <h1>Our Electrical Services</h1>
+  <p>Evansville Electrician Guys handles it all — residential and commercial. If your project isn't listed, just call and we'll discuss it.</p>
+</div>
+
+<div class="content">
+
+  <div class="intro-text">
+    <p>Evansville Electrician Guys are the experts when it comes to electricity. We can handle both residential and commercial properties and service most of the Evansville Indiana market. We have an excellent reputation here in Evansville and have over 20 years of experience. Below is a list of the most common calls we get. If your problem is not on the list, just give us a call.</p>
+  </div>
+
+  <!-- INSTALLATION SERVICES -->
+  <div class="service-block" id="installations">
+    <div class="service-block-inner">
+      <div class="svc-img"><img src="images/install-pendants.jpg" alt="Electrician installing modern pendant lights" /></div>
+      <div class="svc-content">
+        <div class="section-label">Category 1</div>
+        <div class="svc-header">
+          <div class="svc-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <h2>Installation Services</h2>
+        </div>
+        <p>Expert installations for residential and commercial properties. We handle projects of every size — safely and to code. For most projects, we can provide a phone quote before we visit.</p>
+        <div class="service-tags">
+          <span class="tag">Attic Fan</span><span class="tag">Baseboard Heating</span><span class="tag">Cable Outlet</span>
+          <span class="tag">Carbon Monoxide Detectors</span><span class="tag">Ceiling Fan</span><span class="tag">Chandeliers</span>
+          <span class="tag">Circuit Breaker</span><span class="tag">Electrical Switches</span><span class="tag">Energy Efficient Lighting</span>
+          <span class="tag">Exhaust Fans</span><span class="tag">Garage Wiring</span><span class="tag">Garage Door Opener</span>
+          <span class="tag">Generator Analysis</span><span class="tag">GFI Outlets</span><span class="tag">Home Generator</span>
+          <span class="tag">Home Theater System Wiring</span><span class="tag">Light Switches</span><span class="tag">Outlets</span>
+          <span class="tag">Receptacles</span><span class="tag">Service Panels</span><span class="tag">Smoke Detectors</span>
+          <span class="tag">Surge Suppressors</span><span class="tag">Tamper Proof (Child Proof) Outlets</span><span class="tag">Whole House Fans</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="svc-divider" />
+
+  <!-- LIGHTING INSTALLATIONS -->
+  <div class="service-block" id="lighting">
+    <div class="service-block-inner reverse">
+      <div class="svc-content">
+        <div class="section-label">Category 2</div>
+        <div class="svc-header">
+          <div class="svc-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
+          <h2>Lighting Installations</h2>
+        </div>
+        <p>From elegant chandeliers to smart home-connected lighting systems, we install all types of indoor and outdoor lighting. Well-lit properties are more secure, safer, and more beautiful.</p>
+        <div class="service-tags">
+          <span class="tag">Accent Lighting</span><span class="tag">Chandeliers</span><span class="tag">Dimmers</span>
+          <span class="tag">Energy Efficient Lighting</span><span class="tag">Garage Lighting</span><span class="tag">Home Automation (App)</span>
+          <span class="tag">Indoor Lighting</span><span class="tag">Integrated Lighting Hubs</span><span class="tag">LED Lighting</span>
+          <span class="tag">Light Switches</span><span class="tag">Lighting Analysis</span><span class="tag">Lighting Layout or Plan</span>
+          <span class="tag">Motion Light Installation</span><span class="tag">Outdoor Lighting</span><span class="tag">Recessed Lighting</span>
+          <span class="tag">Security Lights</span><span class="tag">Smartphone App Lighting Controls</span><span class="tag">Timers</span>
+          <span class="tag">Track Lighting</span><span class="tag">Wall Hung Light Installation</span>
+        </div>
+      </div>
+      <div class="svc-img"><img src="images/pathway-lights.jpg" alt="Beautiful pathway bollard lighting at night" /></div>
+    </div>
+  </div>
+
+  <hr class="svc-divider" />
+
+  <!-- REPAIR SERVICES -->
+  <div class="service-block" id="repairs">
+    <div class="service-block-inner">
+      <div class="svc-img"><img src="images/panel-probe.jpg" alt="Electrician testing circuit breaker with probe" /></div>
+      <div class="svc-content">
+        <div class="section-label">Category 3</div>
+        <div class="svc-header">
+          <div class="svc-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+          <h2>Repair Services</h2>
+        </div>
+        <p>Attempting electrical repairs yourself can be dangerous. Our team specializes in diagnosing and fixing all types of electrical problems — from minor switch issues to underground wiring and code violations.</p>
+        <div class="service-tags">
+          <span class="tag">Carbon Monoxide Detectors</span><span class="tag">Circuit Breaker / Fuse Replacement</span>
+          <span class="tag">Code Updates and Corrections</span><span class="tag">De-icing</span>
+          <span class="tag">Electrical Safety Inspections</span><span class="tag">Garage Wiring Repair</span>
+          <span class="tag">Light Switch Repair</span><span class="tag">Outlet Repair</span>
+          <span class="tag">Electrical Service Panel Upgrades</span><span class="tag">Smoke Detectors</span>
+          <span class="tag">Surge Suppressors / Protection</span><span class="tag">Switch Repair</span>
+          <span class="tag">Tamper Proof (Child Proof) Outlet Installation</span><span class="tag">Troubleshooting</span>
+          <span class="tag">Underground Wiring</span><span class="tag">Violation Corrections</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="svc-divider" />
+
+  <!-- APPLIANCE HOOK-UPS -->
+  <div class="service-block" id="appliances">
+    <div class="service-block-inner reverse">
+      <div class="svc-content">
+        <div class="section-label">Category 4</div>
+        <div class="svc-header">
+          <div class="svc-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path stroke-linecap="round" d="M8 4v16M16 4v16M3 10h18M3 16h18"/></svg></div>
+          <h2>Appliance Hook-Ups</h2>
+        </div>
+        <p>Certain larger appliances require dedicated circuits or separate breakers due to high power consumption, and some may need a 110V to 220V conversion. Our experts handle all appliance installations safely and correctly, protecting your investment.</p>
+        <div class="service-tags">
+          <span class="tag">Attic Fan</span><span class="tag">Ceiling Fan</span><span class="tag">Chandeliers</span>
+          <span class="tag">Dishwasher</span><span class="tag">Doorbell</span><span class="tag">Dryer</span>
+          <span class="tag">Electric Fireplace</span><span class="tag">Electric Stove</span><span class="tag">Exhaust Fans</span>
+          <span class="tag">Home Generator</span><span class="tag">Home Theater System Wiring</span><span class="tag">Hot Tub</span>
+          <span class="tag">Microwave</span><span class="tag">Spa</span><span class="tag">Thermostat</span>
+          <span class="tag">Washing Machine</span><span class="tag">Whole House Fans</span>
+        </div>
+      </div>
+      <div class="svc-img"><img src="images/generator-install.jpg" alt="Generac home generator installation" /></div>
+    </div>
+  </div>
+
+  <!-- EV CHARGER SPOTLIGHT -->
+  <div style="background: var(--gray); border-radius: 16px; padding: 40px; margin-bottom: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+    <div>
+      <div class="section-label">Featured Service</div>
+      <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--navy); margin-bottom: 12px;">EV Charger Installations</h2>
+      <p style="color: var(--muted); line-height: 1.75; margin-bottom: 16px;">Level 2 home EV charger installation for all major brands. We handle the dedicated circuit, proper wiring, and permit coordination so your charger is safe and ready to use.</p>
+      <a href="index.html#contact" style="display: inline-block; background: var(--yellow); color: var(--navy); padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none;">Get a Free EV Charger Quote</a>
+    </div>
+    <img src="images/ev-charger-wall.png" alt="Wall mounted EV charger installed on brick wall" style="width: 100%; height: 240px; object-fit: cover; border-radius: 10px;" />
+  </div>
+
+  <div class="cta-bar">
+    <h2>Don't See Your Project Listed?</h2>
+    <p>Just give us a call. For most projects, we can provide a preliminary estimate right over the phone. We typically dispatch within 24–48 hours.</p>
+    <a href="tel:+18123248182">📞 Call 812-324-8182</a>
+    <a href="index.html#contact" class="outline">Get a Free Estimate Online</a>
+  </div>
+
+</div>
+
+<section class="partners-section">
+  <div class="partners-inner">
+    <h2>Our Affiliate &amp; Partner Links</h2>
+
+    <div class="partners-grid">
+
+      <div class="partner-col">
+        <h3>⚡ Electricians</h3>
+        <ul>
+          <li><a href="http://www.electricianprosfarmhills.com" target="_blank" rel="noopener">Electrician Pros Farmington Hills</a></li>
+          <li><a href="http://www.electricianproswestland.com" target="_blank" rel="noopener">Electrician Pros Westland</a></li>
+          <li><a href="http://www.electricianproscanton.com" target="_blank" rel="noopener">Electrician Pros Canton</a></li>
+          <li><a href="http://www.electricianproslivonia.com" target="_blank" rel="noopener">Electrician Pros Livonia</a></li>
+          <li><a href="http://www.electricianprosdearborn.com" target="_blank" rel="noopener">Electrician Pros Dearborn</a></li>
+          <li><a href="http://www.electricianprosnovi.com" target="_blank" rel="noopener">Electrician Pros Novi</a></li>
+          <li><a href="http://www.electricianprostroy.com" target="_blank" rel="noopener">Electrician Pros Troy</a></li>
+          <li><a href="http://www.electricianprosrhills.com" target="_blank" rel="noopener">Electrician Pros Rochester Hills</a></li>
+          <li><a href="http://www.electricianproswarren.com" target="_blank" rel="noopener">Electrician Pros Warren</a></li>
+          <li><a href="http://www.electricianprosstownship.com" target="_blank" rel="noopener">Electrician Pros Shelby Township</a></li>
+          <li><a href="http://www.electricianprossterlingheights.com" target="_blank" rel="noopener">Electrician Pros Sterling Heights</a></li>
+          <li><a href="http://www.electricianprosclintontwp.com" target="_blank" rel="noopener">Electrician Pros Clinton Township</a></li>
+          <li><a href="http://www.electricianprosmacomb.com" target="_blank" rel="noopener">Electrician Pros Macomb</a></li>
+          <li><a href="http://www.electricianproswestbloomfield.com" target="_blank" rel="noopener">Electrician Pros West Bloomfield</a></li>
+          <li><a href="http://www.electricianprosdetroit.com" target="_blank" rel="noopener">Electrician Pros Detroit</a></li>
+          <li><a href="http://www.electricianguysgrandrapids.com" target="_blank" rel="noopener">Electrician Guys Grand Rapids</a></li>
+          <li><a href="http://www.electricianprosannarbor.com" target="_blank" rel="noopener">Electrician Pros Ann Arbor</a></li>
+          <li><a href="http://www.electricianproslansing.com" target="_blank" rel="noopener">Electrician Pros Lansing</a></li>
+          <li><a href="http://www.electricianprosflint.com" target="_blank" rel="noopener">Electrician Pros Flint</a></li>
+          <li><a href="http://www.electricianprosaurora.com" target="_blank" rel="noopener">Electrician Pros Aurora IL</a></li>
+          <li><a href="http://www.electricianprosnaperville.com" target="_blank" rel="noopener">Electrician Pros Naperville IL</a></li>
+          <li><a href="http://www.electricianproselgin.com" target="_blank" rel="noopener">Electrician Pros Elgin IL</a></li>
+          <li><a href="http://www.electricianproscicero.com" target="_blank" rel="noopener">Electrician Pros Cicero IL</a></li>
+          <li><a href="http://www.electricianprosarlingtonheights.com" target="_blank" rel="noopener">Electrician Pros Arlington Heights IL</a></li>
+          <li><a href="http://www.electricianprosevanston.com" target="_blank" rel="noopener">Electrician Pros Evanston IL</a></li>
+          <li><a href="http://www.electicianprosbolingbrook.com" target="_blank" rel="noopener">Electrician Pros Bolingbrook IL</a></li>
+          <li><a href="http://www.electricianprosschaumburg.com" target="_blank" rel="noopener">Electrician Pros Schaumburg IL</a></li>
+          <li><a href="http://www.electricianprospalatine.com" target="_blank" rel="noopener">Electrician Pros Palatine IL</a></li>
+          <li><a href="http://www.electricianprosskokie.com" target="_blank" rel="noopener">Electrician Pros Skokie IL</a></li>
+          <li><a href="http://www.electricianprostempe.com" target="_blank" rel="noopener">Electrician Pros Tempe AZ</a></li>
+          <li><a href="http://www.electricianproschandler.com" target="_blank" rel="noopener">Electrician Pros Chandler AZ</a></li>
+          <li><a href="http://www.electricianprospeoriaaz.com" target="_blank" rel="noopener">Electrician Pros Peoria AZ</a></li>
+          <li><a href="http://www.puebloelectricianpro.com" target="_blank" rel="noopener">Pueblo Electrician Pros</a></li>
+          <li><a href="http://www.pompbeachelectricianpros.com" target="_blank" rel="noopener">Pompano Beach Electrician Pros</a></li>
+          <li><a href="http://www.greshamelectricianpros.com" target="_blank" rel="noopener">Gresham Electrician Pros</a></li>
+          <li><a href="http://www.waterburyelectricianpros.com" target="_blank" rel="noopener">Waterbury Electrician Pros</a></li>
+          <li><a href="http://www.provoelectricianpros.com" target="_blank" rel="noopener">Provo Electrician Pros</a></li>
+        </ul>
+      </div>
+
+      <div class="partner-col">
+        <h3>🔧 Plumbing</h3>
+        <ul>
+          <li><a href="http://www.fiveguysplumbingdearborn.com" target="_blank" rel="noopener">Five Guys Plumbing Dearborn</a></li>
+          <li><a href="http://www.rhillsplumbing.com" target="_blank" rel="noopener">Plumbing Rochester Hills</a></li>
+          <li><a href="http://www.westbloomplumbing.com" target="_blank" rel="noopener">West Bloomfield Plumbing</a></li>
+          <li><a href="http://www.fiveguysplumbingwestland.com" target="_blank" rel="noopener">Five Guys Plumbing Westland</a></li>
+          <li><a href="http://www.fiveguysplumbingcanton.com" target="_blank" rel="noopener">Five Guys Plumbing Canton</a></li>
+          <li><a href="http://www.sheightsplumbing.com" target="_blank" rel="noopener">Sterling Heights Plumbing</a></li>
+          <li><a href="http://www.shelbytwpplumbing.com" target="_blank" rel="noopener">Shelby Township Plumbing</a></li>
+          <li><a href="http://www.noviplumb.com" target="_blank" rel="noopener">Novi Plumbing</a></li>
+          <li><a href="http://www.livoniaplumbingco.com" target="_blank" rel="noopener">Livonia Plumbing</a></li>
+          <li><a href="http://www.fiveguysplumbingfarmingtonhills.com" target="_blank" rel="noopener">Five Guys Plumbing Farmington Hills</a></li>
+          <li><a href="http://www.fiveguysplumbingclintontwp.com" target="_blank" rel="noopener">Five Guys Plumbing Clinton Township</a></li>
+          <li><a href="http://www.fiveguysplumbingwarren.com" target="_blank" rel="noopener">Five Guys Plumbing Warren</a></li>
+          <li><a href="http://www.fiveguysplumbingtroy.com" target="_blank" rel="noopener">Five Guys Plumbing Troy</a></li>
+          <li><a href="http://www.macombplumbingco.com" target="_blank" rel="noopener">Macomb Plumbing</a></li>
+          <li><a href="http://www.fiveguysplumbingaurora.com" target="_blank" rel="noopener">Five Guys Plumbing Aurora IL</a></li>
+          <li><a href="http://www.fiveguysplumbingschaumburg.com" target="_blank" rel="noopener">Five Guys Plumbing Schaumburg</a></li>
+          <li><a href="http://www.fiveguysplumbingpalatine.com" target="_blank" rel="noopener">Five Guys Plumbing Palatine</a></li>
+          <li><a href="http://www.fiveguysplumbingskokie.com" target="_blank" rel="noopener">Five Guys Plumbing Skokie</a></li>
+        </ul>
+
+        <h3 style="margin-top:20px">🌡️ HVAC</h3>
+        <ul>
+          <li><a href="http://www.farmhlsfurnaceandair.com" target="_blank" rel="noopener">Farmington Hills Furnace &amp; Air</a></li>
+          <li><a href="http://www.wbheatingandac.com" target="_blank" rel="noopener">West Bloomfield Heating &amp; AC</a></li>
+          <li><a href="http://www.novifurnaceandac.com" target="_blank" rel="noopener">Novi Furnace &amp; AC</a></li>
+          <li><a href="http://www.dearbornfurnaceandac.com" target="_blank" rel="noopener">Dearborn Furnace &amp; AC</a></li>
+          <li><a href="http://www.cantonfurnaceandac.com" target="_blank" rel="noopener">Canton Furnace &amp; AC</a></li>
+          <li><a href="http://www.westlandfurnaceandac.com" target="_blank" rel="noopener">Westland Furnace &amp; AC</a></li>
+          <li><a href="http://www.rhillsfurnaceandairconditioning.com" target="_blank" rel="noopener">Rochester Hills Furnace &amp; Air</a></li>
+          <li><a href="http://www.troyfurnaceandairconditioning.com" target="_blank" rel="noopener">Troy Furnace &amp; Air</a></li>
+          <li><a href="http://www.warrenfurnaceandair.com" target="_blank" rel="noopener">Warren Furnace &amp; Air</a></li>
+          <li><a href="http://www.sheightsfurnaceandac.com" target="_blank" rel="noopener">Sterling Heights Furnace &amp; AC</a></li>
+          <li><a href="http://www.livoniafurnaceandair.com" target="_blank" rel="noopener">Livonia Furnace &amp; Air</a></li>
+          <li><a href="http://www.clintontwpfurnaceandac.com" target="_blank" rel="noopener">Clinton Township Furnace &amp; AC</a></li>
+          <li><a href="http://www.shelbytwpfurnaceandair.com" target="_blank" rel="noopener">Shelby Township Furnace &amp; Air</a></li>
+        </ul>
+      </div>
+
+      <div class="partner-col">
+        <h3>🏠 Flooring &amp; Carpet</h3>
+        <ul>
+          <li><a href="http://www.dearborncarpetandfloors.com" target="_blank" rel="noopener">Dearborn Carpet &amp; Floors</a></li>
+          <li><a href="http://www.aacarpetandfloors.com" target="_blank" rel="noopener">AA Carpet &amp; Floors</a></li>
+          <li><a href="http://www.cantoncarpetandfloors.com" target="_blank" rel="noopener">Canton Carpet &amp; Floors</a></li>
+          <li><a href="http://www.troycarpetandfloors.com" target="_blank" rel="noopener">Troy Carpet &amp; Floors</a></li>
+          <li><a href="http://www.westlandcarpetandfloors.com" target="_blank" rel="noopener">Westland Carpet &amp; Floors</a></li>
+          <li><a href="http://www.wbcarpetandfloors.com" target="_blank" rel="noopener">West Bloomfield Carpet &amp; Floors</a></li>
+          <li><a href="http://www.novicarpetandfloors.com" target="_blank" rel="noopener">Novi Carpet &amp; Floors</a></li>
+          <li><a href="http://www.livoniacarpetandfloors.com" target="_blank" rel="noopener">Livonia Carpet &amp; Floors</a></li>
+          <li><a href="http://www.carpetcleaningfarmhls.com" target="_blank" rel="noopener">Carpet Cleaning Farmington Hills</a></li>
+          <li><a href="http://www.warrencarpetcleaningco.com" target="_blank" rel="noopener">Warren Carpet Cleaning</a></li>
+        </ul>
+
+        <h3 style="margin-top:20px">🏗️ Roofing</h3>
+        <ul>
+          <li><a href="http://www.rhillsroofing.com" target="_blank" rel="noopener">Rochester Hills Roofing</a></li>
+          <li><a href="http://www.shelbytwproofing.com" target="_blank" rel="noopener">Shelby Township Roofing</a></li>
+          <li><a href="http://www.westbloomroofing.com" target="_blank" rel="noopener">West Bloomfield Roofing</a></li>
+        </ul>
+
+        <h3 style="margin-top:20px">🔍 Other Services</h3>
+        <ul>
+          <li><a href="http://www.detroittreeserv.com" target="_blank" rel="noopener">Detroit Tree Service</a></li>
+          <li><a href="http://www.gastoniahomesecurity.com" target="_blank" rel="noopener">Gastonia Home Security</a></li>
+          <li><a href="http://www.westlandmoldinspection.com" target="_blank" rel="noopener">Westland Mold Inspection</a></li>
+          <li><a href="http://www.dearbornmoldinspection.com" target="_blank" rel="noopener">Dearborn Mold Inspection</a></li>
+          <li><a href="http://www.livoniamoldinspection.com" target="_blank" rel="noopener">Livonia Mold Inspection</a></li>
+          <li><a href="http://www.novimoldinspection.com" target="_blank" rel="noopener">Novi Mold Inspection</a></li>
+          <li><a href="http://www.farmhlsmoldinspection.com" target="_blank" rel="noopener">Farmington Hills Mold Inspection</a></li>
+          <li><a href="http://www.wbmoldinspection.com" target="_blank" rel="noopener">West Bloomfield Mold Inspection</a></li>
+          <li><a href="http://www.cantonmoldinspection.com" target="_blank" rel="noopener">Canton Mold Inspection</a></li>
+          <li><a href="http://www.shappraisalservice.com" target="_blank" rel="noopener">Sterling Heights Appraisal Service</a></li>
+          <li><a href="http://www.cantonrealtorfbartlo.com" target="_blank" rel="noopener">Canton Realtor</a></li>
+          <li><a href="http://www.metrodetroitreview.com" target="_blank" rel="noopener">Metro Detroit Review</a></li>
+          <li><a href="http://www.plumbingnewsandmore.com" target="_blank" rel="noopener">Plumbing News and More</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Evansville Electrician Guys</strong> &nbsp;|&nbsp; 1700 E Division St, Evansville, IN 47711</p>
+  <p style="margin-top:8px">
+    <a href="tel:+18123248182">812-324-8182</a> &nbsp;·&nbsp;
+    <a href="index.html">Home</a> &nbsp;·&nbsp;
+    <a href="about.html">About</a> &nbsp;·&nbsp;
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+  <p style="margin-top:12px; font-size:0.78rem; opacity:.6;">© 2026 Evansville Electrician Guys. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
